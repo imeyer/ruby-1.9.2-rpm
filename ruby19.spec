@@ -54,31 +54,27 @@ export CFLAGS="$RPM_OPT_FLAGS -Wall -fno-strict-aliasing"
 make %{?_smp_mflags}
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
 # installing binaries ...
 make install DESTDIR=$RPM_BUILD_ROOT
-rm -rf $RPM_BUILD_ROOT/usr/lib/
-rm -rf $RPM_BUILD_ROOT/usr/share/doc/ruby
-rm -rf $RPM_BUILD_ROOT/usr/src
-#rm -f $RPM_BUILD_ROOT/usr/lib64/libruby-static.a
-#rm -f $RPM_BUILD_ROOT/usr/lib64/libruby.so
 
+#we don't want to keep the src directory
+rm -rf $RPM_BUILD_ROOT/usr/src
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-, root, root)
-%doc README COPYING ChangeLog LEGAL ToDo
 %{_bindir}
 %{_includedir}
-%{_prefix}/lib64/
 %{_prefix}/share/
+%{_libdir}
 
 %changelog
 * Tue Mar 7 2011 Robert Duncan <robert@robduncan.co.uk> - 1.9.2-p136-2
 - Update prerequisites to include make
+- Install /usr/share documentation
+- (Hopefully!?) platform agnostic
 
 * Sun Jan 2 2011 Ian Meyer <ianmmeyer@gmail.com> - 1.9.2-p136-1
 - Initial spec to replace system ruby with 1.9.2-p136
