@@ -4,18 +4,18 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
 
 ### How to install
 
+N.B. The following instructions assume installation on a 32-bit platform. For 64-bit replace i386 with x86_64 (not tested).
+
 #### RHEL/CentOS 5
 
     yum install -y rpm-build
     cd /usr/src/redhat/SOURCES
-    wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p136.tar.gz
+    wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p180.tar.gz
     cd /usr/src/redhat/SPECS
-    curl https://github.com/imeyer/ruby-1.9.2-rpm/raw/master/ruby19.spec > ruby19.spec
+    curl https://github.com/robduncan/ruby-1.9.2-rpm/raw/master/ruby19.spec > ruby19.spec
     rpmbuild -bb ruby19.spec
-    rpm -Uvh ../RPMS/x86_64/ruby-1.9.2p136-1.x86_64.rpm
+    rpm -Uvh ../RPMS/i386/ruby-1.9.2p180-1.ruby-1.9.2p136-1.i386.rpm
     
-    [imeyer@XXXX SPECS]$ ruby --version
-    ruby 1.9.2p136 (2010-12-25 revision 30365) [x86_64-linux]
 
 **PROFIT!**
 
