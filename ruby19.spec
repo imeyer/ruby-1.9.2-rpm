@@ -1,5 +1,5 @@
 %define rubyver         1.9.2
-%define rubyminorver    p136
+%define rubyminorver    p180
 
 %{!?ruby_vendorlib:     %global ruby_vendorlib  %{_prefix}/lib/ruby}
 %{!?ruby_vendorarch:    %global ruby_vendorarch %{_libdir}/ruby}
@@ -71,8 +71,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
-* Tue Mar 7 2011 Robert Duncan <robert@robduncan.co.uk> - 1.9.2-p136-2
+* Tue Mar 7 2011 Robert Duncan <robert@robduncan.co.uk> - 1.9.2-p180-1
 - Update prerequisites to include make
+- Update ruby version to 1.9.2-p180
 - Install /usr/share documentation
 - (Hopefully!?) platform agnostic
 
