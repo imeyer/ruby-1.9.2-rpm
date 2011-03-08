@@ -77,5 +77,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/share/
 
 %changelog
+* Tue Mar 7 2011 Robert Duncan <robert@robduncan.co.uk> - 1.9.2-p136-2
+- Update prerequisites to include make
+
 * Sun Jan 2 2011 Ian Meyer <ianmmeyer@gmail.com> - 1.9.2-p136-1
 - Initial spec to replace system ruby with 1.9.2-p136
