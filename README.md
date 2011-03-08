@@ -14,7 +14,7 @@ N.B. The following instructions assume installation on a 32-bit platform. For 64
     cd /usr/src/redhat/SPECS
     curl https://github.com/robduncan/ruby-1.9.2-rpm/raw/master/ruby19.spec > ruby19.spec
     rpmbuild -bb ruby19.spec
-    rpm -Uvh ../RPMS/i386/ruby-1.9.2p180-1.ruby-1.9.2p136-1.i386.rpm
+    rpm -Uvh ../RPMS/i386/ruby-1.9.2p180-1.ruby-1.9.2p180-1.i386.rpm
     
 
 **PROFIT!**
