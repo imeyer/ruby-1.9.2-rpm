@@ -1,14 +1,9 @@
 %define rubyver         1.9.2
 %define rubyminorver    p180
 
-%{!?ruby_vendorlib:     %global ruby_vendorlib  %{_prefix}/lib/ruby}
-%{!?ruby_vendorarch:    %global ruby_vendorarch %{_libdir}/ruby}
-%{!?ruby_sitelib:       %global ruby_sitelib    %{ruby_vendorlib}/site_ruby}
-%{!?ruby_sitearch:      %global ruby_sitearch   %{ruby_vendorarch}/site_ruby}
-
 Name:           ruby
 Version:        %{rubyver}%{rubyminorver}
-Release:        1%{?dist}
+Release:        2%{?dist}
 License:        Ruby License/GPL - see COPYING
 URL:            http://www.ruby-lang.org/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -26,7 +21,6 @@ Obsoletes: ruby-libs
 Obsoletes: ruby-irb
 Obsoletes: ruby-rdoc
 Obsoletes: ruby-devel
-
 
 %description
 Ruby is the interpreted scripting language for quick and easy
@@ -46,10 +40,7 @@ export CFLAGS="$RPM_OPT_FLAGS -Wall -fno-strict-aliasing"
   --without-X11 \
   --without-tk \
   --includedir=%{_includedir}/ruby \
-  --with-sitedir='%{ruby_sitelib}' \
-  --with-sitearchdir='%{ruby_sitearch}' \
-  --with-vendordir='%{ruby_vendorlib}' \
-  --with-vendorarchdir='%{ruby_vendorarch}'
+  --libdir=%{_libdir}
 
 make %{?_smp_mflags}
 
@@ -67,10 +58,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-, root, root)
 %{_bindir}
 %{_includedir}
-%{_prefix}/share/
+%{_datadir}
 %{_libdir}
 
 %changelog
+* Sat Jun 25 2011 Ian Meyer <ianmmeyer@gmail.com> - 1.9.2-p180-2
+- Remove non-existant --sitearchdir and --vedorarchdir from %configure
+- Replace --sitedir --vendordir with simpler --libdir
+- Change %{_prefix}/share to %{_datadir}
+
 * Tue Mar 7 2011 Robert Duncan <robert@robduncan.co.uk> - 1.9.2-p180-1
 - Update prerequisites to include make
 - Update ruby version to 1.9.2-p180
