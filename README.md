@@ -9,11 +9,11 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
     yum install -y rpm-build rpmdevtools
     rpmdev-setuptree
     cd ~/rpmbuild/SOURCES
-    wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p180.tar.gz
+    wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p290.tar.gz
     cd ~/rpmbuild/SPECS
     curl https://raw.github.com/imeyer/ruby-1.9.2-rpm/master/ruby19.spec > ruby19.spec
     rpmbuild -bb ruby19.spec
-    rpm -Uvh ~/rpmbuild/RPMS/x86_64/ruby-1.9.2p180-2.ruby-1.9.2p180-2.i386.rpm
+    rpm -Uvh ~/rpmbuild/RPMS/x86_64/ruby-1.9.2p290-2.ruby-1.9.2p290-2.i386.rpm
 
 **PROFIT!**
 
