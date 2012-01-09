@@ -16,11 +16,13 @@ Provides: ruby-irb
 Provides: ruby-rdoc
 Provides: ruby-libs
 Provides: ruby-devel
+Provides: rubygems
 Obsoletes: ruby
 Obsoletes: ruby-libs
 Obsoletes: ruby-irb
 Obsoletes: ruby-rdoc
 Obsoletes: ruby-devel
+Obsoletes: rubygems
 
 %description
 Ruby is the interpreted scripting language for quick and easy
