@@ -36,11 +36,11 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
 
 Tested working (as sane as I could test for) on:
 
-* RHEL 5.6 x86_64
-* RHEL 6 x86_64
-* RHEL 6.1 x86_64
-* RHEL 6.1 i686
-* CentOS 5.6 x86_64
+* RHEL 5.x x86_64
+* RHEL 6.x x86_64
+* RHEL 6.x i686
+* CentOS 5.x x86_64
+* Scientific Linux 6.x x86_64
 
 ### Personal thoughts
 
