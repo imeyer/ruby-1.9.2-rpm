@@ -1,9 +1,9 @@
 %define rubyver         1.9.2
-%define rubyminorver    p290
+%define rubyminorver    p320
 
 Name:           ruby
 Version:        %{rubyver}%{rubyminorver}
-Release:        3%{?dist}
+Release:        1%{?dist}
 License:        Ruby License/GPL - see COPYING
 URL:            http://www.ruby-lang.org/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -64,6 +64,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
+* Thu May 3 2012 Eric Shamow <eric@puppetlabs.com> - 1.9.2-p320
+- Update ruby version to 1.9.2-p320
 * Mon Aug 29 2011 Gregory Graf <graf.gregory@gmail.com> - 1.9.2-p290
 - Update ruby version to 1.9.2-p290
 * Sat Jun 25 2011 Ian Meyer <ianmmeyer@gmail.com> - 1.9.2-p180-2
